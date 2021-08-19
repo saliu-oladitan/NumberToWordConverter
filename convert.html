@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Convert.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            CompleteFigure: <input type= "text" id="completefig" onchange="SplitCompleteFigure()"/> <br><br>
+             <input type= "text" id="nairainput" /> 
+            <input type= "text" id="koboinput" />
+
+
+            <button id="button">Convert</button>
+            <!-- <button id="split" onclick="SplitCompleteFigure()">Split</button> -->
+        </div>
+        <br><br>
+            <h3 id="naira" >Naira</h3>
+
+            <h3 id="kobo" >Kobo</h3>
+      
+            <h3 id="merge" name="merge"></h3>
+    </div>
+    <!-- <script src="splitnum.js"></script> -->
+    <script src="numberToWords.js"></script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
+
+<script>
+let btnConvet = document.querySelector('#button');
+let nairainput = document.querySelector('#nairainput');
+let koboinput = document.querySelector('#koboinput');
+
+
+
+let naira = document.querySelector('#naira');
+let kobo = document.querySelector('#kobo');
+
+// let merge =document.querySelector('#merge');
+//var merge= naira + kobo;
+//document.getElementById('#merge').innerHTML=merge;
+//let merge = document.querySelector('#merge');
+
+btnConvet.addEventListener('click', () => {
+
+
+   
+    naira.innerText = numberToWords.toWords(nairainput.value) + " Naira" ;
+    kobo.innerText = numberToWords.toWords(koboinput.value) + " Kobo" ;
+    
+    var NairaWord = numberToWords.toWords(nairainput.value) + " Naira ";
+    var KoboWord = numberToWords.toWords(koboinput.value) + " Kobo" ;
+   
+    
+    var NairaWord1 = NairaWord.split("hundred")[0];
+    var NairaWord2 = NairaWord.split("hundred")[1];
+    var NairaWord1Complete = NairaWord1 + " hundred and"
+    //var MergeValue = FinalNairaWord + KoboWord;
+     document.getElementById('merge').innerHTML = NairaWord1Complete + " " + NairaWord2 + ", " + KoboWord;
+     
+});
+</script>
+
+<script>
+
+function SplitCompleteFigure(){
+        var completefig = document.getElementById("completefig").value;
+        document.getElementById("nairainput").value = completefig.split(".")[0];
+        document.getElementById("koboinput").value = completefig.split(".")[1];
+
+    }
+</script>

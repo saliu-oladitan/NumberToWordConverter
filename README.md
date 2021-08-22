@@ -1,5 +1,5 @@
 # NumberToWordConverter
-This web App helps to convert number to word. It is a modified app gotten from another repo: 
+This web App helps to convert number to word. It is a modified code gotten from another repo: 
 
 https://github.com/marlun78/number-to-words/blob/master/numberToWords.js
 

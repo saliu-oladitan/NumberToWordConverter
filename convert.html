@@ -53,15 +53,15 @@ btnConvet.addEventListener('click', () => {
     naira.innerText = numberToWords.toWords(nairainput.value) + " Naira" ;
     kobo.innerText = numberToWords.toWords(koboinput.value) + " Kobo" ;
     
-    var NairaWord = numberToWords.toWords(nairainput.value) + " Naira ";
-    var KoboWord = numberToWords.toWords(koboinput.value) + " Kobo" ;
-   
+    var NairaWord = numberToWords.toWords(nairainput.value) + " Naira";
+    var KoboWord = numberToWords.toWords(koboinput.value) + " Kobo Only" ;
+    var merge = NairaWord + ", " + KoboWord;
     
-    var NairaWord1 = NairaWord.split("hundred")[0];
-    var NairaWord2 = NairaWord.split("hundred")[1];
-    var NairaWord1Complete = NairaWord1 + " hundred and"
+    //var NairaWord1 = NairaWord.split("hundred")[0];
+    //var NairaWord2 = NairaWord.split("hundred")[1];
+    //var NairaWord1Complete = NairaWord1 + " hundred and"
     //var MergeValue = FinalNairaWord + KoboWord;
-     document.getElementById('merge').innerHTML = NairaWord1Complete + " " + NairaWord2 + ", " + KoboWord;
+    document.getElementById('merge').innerHTML = merge;
      
 });
 </script>
